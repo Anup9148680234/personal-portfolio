@@ -38,7 +38,7 @@ Follow these steps to get your portfolio up and running:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/JeninSutradhar/flow-portfolio.git
+git clone https://github.com/Anup9148680234/personal-portfolio
 cd flow-portfolio
 ````
 

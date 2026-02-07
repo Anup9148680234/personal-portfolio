@@ -1,27 +1,27 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { useToast } from "@/components/ui/use-toast"
-import { FluidBackground } from "@/components/fluid-background"
-import { Mail, MapPin, Clock, ArrowLeft } from "lucide-react"
-import { useRouter } from "next/navigation"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/components/ui/use-toast";
+import { FluidBackground } from "@/components/fluid-background";
+import { Mail, MapPin, Clock, ArrowLeft } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export default function ContactPage() {
-  const router = useRouter()
-  const { toast } = useToast()
+  const router = useRouter();
+  const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     subject: "",
     message: "",
-  })
+  });
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log("Submitting form data:", formData)
+    e.preventDefault();
+    console.log("Submitting form data:", formData);
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -29,37 +29,37 @@ export default function ContactPage() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
-      })
+      });
 
-      const result = await response.json()
+      const result = await response.json();
 
       if (response.ok) {
         toast({
           title: "Message sent!",
           description: "Thank you for your message. I'll get back to you soon.",
-        })
+        });
         setFormData({
           name: "",
           email: "",
           subject: "",
           message: "",
-        })
+        });
       } else {
         toast({
           title: "Error",
           description: result.message || "Failed to send message.",
           variant: "destructive",
-        })
+        });
       }
     } catch (error) {
-      console.error("Submission error:", error)
+      console.error("Submission error:", error);
       toast({
         title: "Error",
         description: "An unexpected error occurred. Please try again.",
         variant: "destructive",
-      })
+      });
     }
-  }
+  };
 
   return (
     <div className="min-h-screen bg-black text-white relative">
@@ -69,7 +69,7 @@ export default function ContactPage() {
       {/* Back Button */}
       <button
         onClick={() => router.push("/")}
-        className="fixed top-24 left-6 md:left-12 z-20 flex items-center space-x-2 text-gray-400 hover:text-white transition-colors"
+        className="fixed top-12 left-4 md:left-8 z-20 flex items-center space-x-2 text-gray-400 hover:text-white transition-colors"
       >
         <ArrowLeft className="w-5 h-5" />
         <span>Back to Home</span>
@@ -84,9 +84,15 @@ export default function ContactPage() {
               {/* Header */}
               <div className="mb-12">
                 <h1 className="text-4xl md:text-5xl font-light mb-4">
-                  Let's <span className="italic font-normal text-gray-400 font-[var(--font-playfair)]">Connect</span>
+                  Let's{" "}
+                  <span className="italic font-normal text-gray-400 font-[var(--font-playfair)]">
+                    Connect
+                  </span>
                 </h1>
-                <p className="text-gray-400">I'm always interested in hearing about new opportunities and collaborations.</p>
+                <p className="text-gray-400">
+                  I'm always interested in hearing about new opportunities and
+                  collaborations.
+                </p>
               </div>
 
               {/* Contact Form */}
@@ -99,7 +105,9 @@ export default function ContactPage() {
                     <Input
                       id="name"
                       value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, name: e.target.value })
+                      }
                       placeholder="Your name"
                       required
                       className="bg-white/5 border-white/10 text-white placeholder:text-gray-500"
@@ -113,7 +121,9 @@ export default function ContactPage() {
                       id="email"
                       type="email"
                       value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, email: e.target.value })
+                      }
                       placeholder="Your email"
                       required
                       className="bg-white/5 border-white/10 text-white placeholder:text-gray-500"
@@ -127,7 +137,9 @@ export default function ContactPage() {
                   <Input
                     id="subject"
                     value={formData.subject}
-                    onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, subject: e.target.value })
+                    }
                     placeholder="Subject of your message"
                     required
                     className="bg-white/5 border-white/10 text-white placeholder:text-gray-500"
@@ -140,7 +152,9 @@ export default function ContactPage() {
                   <Textarea
                     id="message"
                     value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, message: e.target.value })
+                    }
                     placeholder="Your message"
                     required
                     className="min-h-[150px] bg-white/5 border-white/10 text-white placeholder:text-gray-500"
@@ -157,7 +171,12 @@ export default function ContactPage() {
                     stroke="currentColor"
                     viewBox="0 0 24 24"
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
                   </svg>
                 </Button>
               </form>
@@ -168,14 +187,19 @@ export default function ContactPage() {
               <div className="space-y-12">
                 {/* Contact Info */}
                 <div>
-                  <h3 className="text-2xl font-light mb-6">Contact Information</h3>
+                  <h3 className="text-2xl font-light mb-6">
+                    Contact Information
+                  </h3>
                   <div className="space-y-6">
                     <div className="flex items-start space-x-4">
                       <Mail className="w-6 h-6 text-gray-400 mt-1" />
                       <div>
                         <p className="text-gray-400 mb-1">Email</p>
-                        <a href="mailto:contact@jeninsutradhar.com" className="text-white hover:text-gray-300 transition-colors">
-                          jeninsutradhar@gmail.com
+                        <a
+                          href="mailto:anup220799@gmail.com"
+                          className="text-white hover:text-gray-300 transition-colors"
+                        >
+                          anup220799@gmail.com
                         </a>
                       </div>
                     </div>
@@ -183,7 +207,7 @@ export default function ContactPage() {
                       <MapPin className="w-6 h-6 text-gray-400 mt-1" />
                       <div>
                         <p className="text-gray-400 mb-1">Location</p>
-                        <p className="text-white">Rajasthan, India</p>
+                        <p className="text-white">Banglore, India</p>
                       </div>
                     </div>
                   </div>
@@ -191,19 +215,39 @@ export default function ContactPage() {
 
                 {/* FAQ Section */}
                 <div>
-                  <h3 className="text-2xl font-light mb-6">Frequently Asked Questions</h3>
+                  <h3 className="text-2xl font-light mb-6">
+                    Frequently Asked Questions
+                  </h3>
+
                   <div className="space-y-6">
                     <div>
-                      <h4 className="text-white mb-2">What services do you offer?</h4>
-                      <p className="text-gray-400">I specialize in full-stack development, UI/UX design, and web application development using modern technologies.</p>
+                      <h4 className="text-white mb-2">What do you work on?</h4>
+                      <p className="text-gray-400">
+                        I focus on building modern web applications using
+                        JavaScript, the MERN stack, and Shopify. This includes
+                        frontend development, full-stack features, performance
+                        optimization, and clean, scalable UI implementations.
+                      </p>
                     </div>
+
                     <div>
-                      <h4 className="text-white mb-2">How quickly do you respond?</h4>
-                      <p className="text-gray-400">I typically respond to all inquiries within 24-48 hours during business days.</p>
+                      <h4 className="text-white mb-2">
+                        What kind of projects do you enjoy most?
+                      </h4>
+                      <p className="text-gray-400">
+                        I enjoy working on projects that involve real-world
+                        problems. 
+                      </p>
                     </div>
+
                     <div>
-                      <h4 className="text-white mb-2">Do you work remotely?</h4>
-                      <p className="text-gray-400">Yes, I'm available for both remote work and local collaborations in Rajasthan.</p>
+                      <h4 className="text-white mb-2">
+                        Are you open to remote opportunities?
+                      </h4>
+                      <p className="text-gray-400">
+                        Yes. I'm open to remote roles, freelance projects, and
+                        collaboration opportunities.
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -213,5 +257,5 @@ export default function ContactPage() {
         </div>
       </div>
     </div>
-  )
-} 
+  );
+}

@@ -22,8 +22,8 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: "Jenin Sutradhar - Portfolio",
-  description: "Full Stack & Blockchain Developer based in India",
+  title: "Anup Angadi - Portfolio",
+  description: "A passionate Front End Web Developer",
 }
 
 export default function RootLayout({
