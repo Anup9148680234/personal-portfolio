@@ -1,43 +1,69 @@
-"use client"
+"use client";
 
-import { SectionSeparator } from "@/components/section-separator"
+import { SectionSeparator } from "@/components/section-separator";
 
 const skills = [
-  "Python",
-  "React",
-  "Blockchain",
-  "Docker",
-  "Cloud",
-  "Linux",
-  "Git",
-  "SQL",
-  "Network Security",
-  "Tailwind CSS",
-  "CI/CD"
-]
+  // Languages
+  "JavaScript",
 
+  // Frontend
+  "React",
+  "Next.js",
+  "Tailwind CSS",
+
+  // Backend
+
+  "GraphQL",
+
+  "MySQL",
+
+  // E-commerce / CMS
+  "Shopify",
+  "DSA",
+  "System Design",
+];
 const experience = [
   {
-    role: "Senior Developer",
-    company: "Company A",
-    period: "2024 - Present",
+    role: "Front-End Developer",
+    company: "Ecloto Designs",
+    period: "Nov 2024 - Present",
+    highlights: [
+      "Developed custom Shopify app features including dynamic color swatches, product bundles, and optimized Add to Cart blocks to improve conversion rates.",
+      "Built responsive and scalable Shopify app frontends using React, integrated with Shopify Admin via GraphQL.",
+      "Performed end-to-end testing using React Native and Android Studio to ensure cross-platform compatibility and performance.",
+    ],
   },
   {
-    role: "Full Stack Developer",
-    company: "Company B",
-    period: "2023 - 2024",
+    role: "Software Developer",
+    company: "HummingBird Web Solutions Limited",
+    period: "Aug 2023 - Oct 2024",
+    highlights: [
+      "Led Magento 2 to Shopify migration projects, ensuring data integrity, minimal downtime, and SEO preservation.",
+      "Developed and enhanced e-commerce platforms using Next.js and GraphQL, improving frontend performance and backend efficiency.",
+      "Upgraded and optimized WordPress themes, improving site performance by up to 70% and significantly enhancing mobile responsiveness.",
+    ],
   },
   {
-    role: "Frontend Developer",
-    company: "Company C",
-    period: "2022 - 2023",
+    role: "Full Stack Web Developer Intern",
+    company: "AccioJob",
+    period: "Late 2022 - Mid 2023",
+    highlights: [
+      "Built full-stack web applications using React, Node.js, Express, and MongoDB as part of an intensive developer training program.",
+      "Implemented REST APIs, authentication flows, and CRUD operations while following clean coding practices.",
+      "Strengthened problem-solving skills by working on data structures, algorithms, and real-world coding assignments.",
+    ],
   },
   {
-    role: "Junior Developer",
-    company: "Company D",
-    period: "2021 - 2022",
+    role: "Risk & Financial Advisory Analyst",
+    company: "Deloitte",
+    period: "Sep 2021 - Sep 2022",
+    highlights: [
+      "Developed and deployed a full-stack web application, contributing to both frontend UI and backend logic with database integration.",
+      "Participated in third-party risk assessment projects, applying modern risk evaluation methodologies and compliance standards.",
+      "Collaborated with cross-functional teams and attended continuous training sessions to align technical solutions with business risk needs.",
+    ],
   },
-]
+];
 
 export const SkillsSection = () => {
   return (
@@ -91,6 +117,5 @@ export const SkillsSection = () => {
       {/* Beautiful separator after Skills section */}
       <SectionSeparator />
     </>
-  )
-}
-
+  );
+};

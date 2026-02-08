@@ -24,6 +24,11 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Anup Angadi - Portfolio",
   description: "A passionate Front End Web Developer",
+   icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
 }
 
 export default function RootLayout({

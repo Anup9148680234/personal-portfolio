@@ -9,42 +9,65 @@ import { FluidBackground } from "@/components/fluid-background"
 const projects = [
   {
     id: 1,
-    title: "Project Alpha",
-    description: "A comprehensive SaaS platform featuring user management, analytics dashboard, and automated workflows. Built with modern technologies for scalability and performance.",
-    category: "SaaS",
-    type: "Web App",
-    link: "https://project-alpha.example.com",
-    image: "/mocks/nexus.png",
+    title: "CelticJewelry - Magento to Shopify Migration",
+    description:
+      "Migrated an incomplete Magento 2 store to Shopify, resolving legacy issues, fixing broken functionalities, and customizing the Ella theme to deliver a stable, SEO-optimized, and conversion-focused e-commerce experience.",
+    category: "Shopify",
+    type: "E-commerce Migration",
+    link: "https://celticjewelry.com",
+    image: "/mocks/celtic.gif",
   },
   {
     id: 2,
-    title: "Project Beta",
-    description: "Professional landing page with modern design, optimized performance, and conversion-focused layout.",
+    title: "Crypto Tracker",
+    description:
+      "A responsive React.js application using the CoinGecko API and Material UI to track 100+ cryptocurrencies, compare prices, manage watchlists, and switch between dark and light themes.",
     category: "Frontend",
-    type: "Landing Page",
-    link: "https://project-beta.example.com",
-    image: "/mocks/purplerain.png"
+    type: "Web App",
+    link: "https://github.com/Anup9148680234/crypto_app",
+    image: "/mocks/crypto.gif",
   },
   {
     id: 3,
-    title: "Project Gamma",
-    description: "High-performance backend service designed for scalability, security, and reliability in production environments.",
-    category: "Backend",
-    type: "API Service",
-    skills: ["Node.js", "API Design", "Database"],
-    link: "https://github.com/yourusername/project-gamma",
-    image: "/mocks/fortifynet.png",
+    title: "Headless Shopify Storefront",
+    description:
+      "A modern headless Shopify storefront built with Next.js and Tailwind CSS, integrating the Shopify Storefront GraphQL API for real-time product data, inventory updates, and dynamic variant selection.",
+    category: "Shopify",
+    type: "Full-Stack Web App",
+    link: "https://github.com/Anup9148680234/headless-shopify-dashboard",
+    image: "/mocks/headless-dashboard.gif",
   },
   {
     id: 4,
-    title: "Project Delta",
-    description: "Modern web application with responsive design and intuitive user experience.",
-    category: "UI/UX",
+    title: "Axiom Pulse - Token Trading Table",
+    description:
+      "A pixel-perfect frontend application displaying token trading data in an interactive table layout, focused on clean UI, performance, and real-time market visualization.",
+    category: "Frontend",
     type: "Web App",
-    link: "https://project-delta.example.com",
-    image: "/mocks/cyphersec.jpeg",
+    link: "https://github.com/Anup9148680234/axiom-pulse-token-trading-table-app",
+    image: "/mocks/axiom-pulse-token-trading.gif",
   },
-]
+  {
+    id: 5,
+    title: "Podcast Platform",
+    description:
+      "A full-stack podcast platform built with React, Redux, and Firebase, featuring authentication, profile management, podcast creation, episode uploads, and a fully responsive user interface.",
+    category: "Full-Stack",
+    type: "Web App",
+    link: "https://github.com/Anup9148680234/podcast-app",
+    image: "/mocks/podcast.gif",
+  },
+  {
+    id: 6,
+    title: "Elevating Coffeeza's E-commerce Presence",
+    description:
+      "Password: temahb - Designed and developed Coffeeza's Shopify website, leveraging Liquid templates and best practices for a seamless e-commerce experience.",
+    category: "Graphics",
+    type: "Web Experience",
+    link: "https://coffeeezza.myshopify.com/",
+    image: "/mocks/coffeezaa.gif",
+  },
+];
 
 export default function ProjectsPage() {
   const router = useRouter()

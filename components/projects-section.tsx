@@ -1,105 +1,110 @@
-"use client"
+"use client";
 
-import type React from "react"
-import { ArrowUpRight } from "lucide-react"
-import { useState, useEffect, useRef } from "react"
-import { SectionSeparator } from "@/components/section-separator"
-
+import type React from "react";
+import { ArrowUpRight } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+import { SectionSeparator } from "@/components/section-separator";
 const projects = [
   {
     id: 1,
-    title: "Project Alpha",
-    description: "A modern SaaS application with advanced features and intuitive user interface.",
-    category: "SaaS",
-    type: "Web App",
-    link: "https://project-alpha.example.com",
-    image: "/mocks/nexus.png",
+    title: "CelticJewelry - Magento to Shopify Migration",
+    description:
+      "Migrated an incomplete Magento 2 store to Shopify, resolving legacy issues, fixing broken functionalities, and customizing the Ella theme to deliver a stable, SEO-optimized, and conversion-focused e-commerce experience.",
+    category: "Shopify",
+    type: "E-commerce Migration",
+    link: "https://celticjewelry.com",
+    image: "/mocks/celtic.gif",
   },
   {
     id: 2,
-    title: "Project Beta",
-    description: "Professional landing page with modern design and optimized performance.",
+    title: "Crypto Tracker",
+    description:
+      "A responsive React.js application using the CoinGecko API and Material UI to track 100+ cryptocurrencies, compare prices, manage watchlists, and switch between dark and light themes.",
     category: "Frontend",
-    type: "Landing Page",
-    link: "https://project-beta.example.com",
-    image: "/mocks/purplerain.png",
+    type: "Web App",
+    link: "https://github.com/Anup9148680234/crypto_app",
+    image: "/mocks/crypto.gif",
   },
   {
     id: 3,
-    title: "Project Gamma",
-    description: "High-performance backend service built with modern technologies for scalability.",
-    category: "Backend",
-    type: "API Service",
-    link: "https://github.com/yourusername/project-gamma",
-    image: "/mocks/fortifynet.png",
+    title: "Headless Shopify Storefront",
+    description:
+      "A modern headless Shopify storefront built with Next.js and Tailwind CSS, integrating the Shopify Storefront GraphQL API for real-time product data, inventory updates, and dynamic variant selection.",
+    category: "Shopify",
+    type: "Full-Stack Web App",
+    link: "https://github.com/Anup9148680234/headless-shopify-dashboard",
+    image: "/mocks/headless-dashboard.gif",
   },
   {
     id: 4,
-    title: "Project Delta",
-    description: "Full-stack web application with real-time features and modern architecture.",
-    category: "Full-Stack",
+    title: "Axiom Pulse - Token Trading Table",
+    description:
+      "A pixel-perfect frontend application displaying token trading data in an interactive table layout, focused on clean UI, performance, and real-time market visualization.",
+    category: "Frontend",
     type: "Web App",
-    link: "https://project-delta.example.com",
-    image: "/mocks/momentum.png",
+    link: "https://github.com/Anup9148680234/axiom-pulse-token-trading-table-app",
+    image: "/mocks/axiom-pulse-token-trading.gif",
   },
   {
     id: 5,
-    title: "Project Epsilon",
-    description: "Beautiful and responsive user interface with modern design principles.",
-    category: "UI/UX",
-    type: "Frontend",
-    link: "https://project-epsilon.example.com",
-    image: "/mocks/cyphersec.jpeg",
+    title: "Podcast Platform",
+    description:
+      "A full-stack podcast platform built with React, Redux, and Firebase, featuring authentication, profile management, podcast creation, episode uploads, and a fully responsive user interface.",
+    category: "Full-Stack",
+    type: "Web App",
+    link: "https://github.com/Anup9148680234/podcast-app",
+    image: "/mocks/podcast.gif",
   },
   {
     id: 6,
-    title: "Project Zeta",
-    description: "Cross-platform desktop application with native performance and modern UI.",
-    category: "Desktop",
-    type: "Desktop App",
-    link: "https://github.com/yourusername/project-zeta",
-    image: "/mocks/kryptos.png",
+    title: "Elevating Coffeeza's E-commerce Presence",
+    description:
+      "Password: temahb - Designed and developed Coffeeza's Shopify website, leveraging Liquid templates and best practices for a seamless e-commerce experience.",
+    category: "Graphics",
+    type: "Web Experience",
+    link: "https://coffeeezza.myshopify.com/",
+    image: "/mocks/coffeezaa.gif",
   },
-]
+];
 
 export const ProjectsSection = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null)
-  const [translateX, setTranslateX] = useState(0)
-  const animationRef = useRef<number>(0)
-  const containerRef = useRef<HTMLDivElement>(null)
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const [translateX, setTranslateX] = useState(0);
+  const animationRef = useRef<number>(0);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   // Create multiple copies for infinite scroll
-  const allProjects = [...projects, ...projects, ...projects]
-  const cardWidth = 400 + 24 // 400px card + 24px gap
-  const totalWidth = cardWidth * projects.length
+  const allProjects = [...projects, ...projects, ...projects];
+  const cardWidth = 400 + 24; // 400px card + 24px gap
+  const totalWidth = cardWidth * projects.length;
 
   // Animation loop using requestAnimationFrame
   useEffect(() => {
     const animate = () => {
       setTranslateX((prev) => {
-        const newX = prev - 1 // Move 1px per frame (adjust speed here)
+        const newX = prev - 1; // Move 1px per frame (adjust speed here)
         // Reset when we've moved one full set
-        return newX <= -totalWidth ? 0 : newX
-      })
-      animationRef.current = requestAnimationFrame(animate)
-    }
+        return newX <= -totalWidth ? 0 : newX;
+      });
+      animationRef.current = requestAnimationFrame(animate);
+    };
 
-    animationRef.current = requestAnimationFrame(animate)
+    animationRef.current = requestAnimationFrame(animate);
 
     return () => {
       if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current)
+        cancelAnimationFrame(animationRef.current);
       }
-    }
-  }, [totalWidth])
+    };
+  }, [totalWidth]);
 
   const handleMouseMove = (e: React.MouseEvent) => {
     setMousePosition({
       x: e.clientX,
       y: e.clientY,
-    })
-  }
+    });
+  };
 
   useEffect(() => {
     const handleGlobalMouseMove = (e: MouseEvent) => {
@@ -107,28 +112,33 @@ export const ProjectsSection = () => {
         setMousePosition({
           x: e.clientX,
           y: e.clientY,
-        })
+        });
       }
-    }
+    };
 
     if (hoveredCard) {
-      document.addEventListener("mousemove", handleGlobalMouseMove)
+      document.addEventListener("mousemove", handleGlobalMouseMove);
     }
 
     return () => {
-      document.removeEventListener("mousemove", handleGlobalMouseMove)
-    }
-  }, [hoveredCard])
+      document.removeEventListener("mousemove", handleGlobalMouseMove);
+    };
+  }, [hoveredCard]);
 
   return (
     <>
       <section id="projects" className="py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-8">
-            <span className="text-gray-400 text-lg italic font-light font-[var(--font-playfair)]">-- Projects --</span>
+            <span className="text-gray-400 text-lg italic font-light font-[var(--font-playfair)]">
+              -- Projects --
+            </span>
           </div>
           <h2 className="text-5xl md:text-6xl font-light text-center mb-20 leading-tight font-[var(--font-plus-jakarta)]">
-            My Latest <span className="italic font-normal text-gray-400 font-[var(--font-playfair)]">Projects</span>
+            My Latest{" "}
+            <span className="italic font-normal text-gray-400 font-[var(--font-playfair)]">
+              Projects
+            </span>
           </h2>
 
           {/* Infinite Scrolling Container */}
@@ -147,7 +157,9 @@ export const ProjectsSection = () => {
                   onMouseMove={handleMouseMove}
                   onMouseEnter={() => setHoveredCard(project.id)}
                   onMouseLeave={() => setHoveredCard(null)}
-                  onClick={() => project.link && window.open(project.link, '_blank')}
+                  onClick={() =>
+                    project.link && window.open(project.link, "_blank")
+                  }
                 >
                   <div className="project-card-landscape bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-2xl overflow-hidden h-full transition-all duration-300 hover:scale-105 will-change-transform shadow-xl hover:shadow-2xl hover:shadow-white/10 relative">
                     {/* Project Image - Full Card */}
@@ -222,6 +234,5 @@ export const ProjectsSection = () => {
       {/* Beautiful separator after Projects section */}
       <SectionSeparator />
     </>
-  )
-}
-
+  );
+};

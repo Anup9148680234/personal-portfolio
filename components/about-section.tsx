@@ -50,7 +50,7 @@ With hands-on experience in JavaScript, the MERN stack, and Shopify, I focus on 
           <div className="relative">
             <div className="aspect-[4/3] rounded-3xl overflow-hidden border border-white/10 backdrop-blur-sm relative">
               <img
-                src="https://img.freepik.com/premium-vector/black-white-texture-background-vector-image-overlay-monochrome-grunge-texture_867643-19921.jpg"
+                src="/more-about-myself.jpg"
                 alt="Anup Angadi"
                 className="w-full h-full object-cover rounded-3xl"
               />
