@@ -16,6 +16,7 @@ const projects = [
     type: "E-commerce Migration",
     link: "https://celticjewelry.com",
     image: "/mocks/celtic.gif",
+    skills: ["Shopify", "Liquid", "E-commerce Migration"],
   },
   {
     id: 2,
@@ -26,6 +27,7 @@ const projects = [
     type: "Web App",
     link: "https://github.com/Anup9148680234/crypto_app",
     image: "/mocks/crypto.gif",
+    skills: ["React.js", "REST APIs", "Material UI"],
   },
   {
     id: 3,
@@ -36,6 +38,7 @@ const projects = [
     type: "Full-Stack Web App",
     link: "https://github.com/Anup9148680234/headless-shopify-dashboard",
     image: "/mocks/headless-dashboard.gif",
+    skills: ["Next.js", "GraphQL", "Headless Commerce"],
   },
   {
     id: 4,
@@ -46,6 +49,7 @@ const projects = [
     type: "Web App",
     link: "https://github.com/Anup9148680234/axiom-pulse-token-trading-table-app",
     image: "/mocks/axiom-pulse-token-trading.gif",
+    skills: ["React.js", "Data Visualization", "UI/UX Design"],
   },
   {
     id: 5,
@@ -56,6 +60,7 @@ const projects = [
     type: "Web App",
     link: "https://github.com/Anup9148680234/podcast-app",
     image: "/mocks/podcast.gif",
+    skills: ["React.js", "Redux", "Firebase"],
   },
   {
     id: 6,
@@ -66,8 +71,10 @@ const projects = [
     type: "Web Experience",
     link: "https://coffeeezza.myshopify.com/",
     image: "/mocks/coffeezaa.gif",
+    skills: ["Shopify", "Liquid", "UI/UX Design"],
   },
 ];
+
 
 export default function ProjectsPage() {
   const router = useRouter()
