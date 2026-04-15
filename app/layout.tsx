@@ -5,7 +5,7 @@ import { stackServerApp } from "../stack";
 import type { Metadata } from "next"
 import { Plus_Jakarta_Sans, Playfair_Display } from "next/font/google"
 import "./globals.css"
-
+import { Toaster } from "@/components/ui/toaster"
 import { CustomCursor } from "@/components/custom-cursor"
 
 import { Space_Grotesk, Manrope } from "next/font/google"
@@ -54,7 +54,7 @@ export default function RootLayout({
     <html lang="en" className={`${spaceGrotesk.variable} ${manrope.variable}`}>
       <body className="font-manrope"><StackProvider app={stackClientApp}><StackTheme><StackProvider app={stackServerApp}><StackTheme>
         {children}
- 
+        <Toaster />
         <CustomCursor />
       </StackTheme></StackProvider></StackTheme></StackProvider></body>
     </html>
