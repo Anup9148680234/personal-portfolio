@@ -12,7 +12,7 @@ const FadePortfolio = () => {
   return (
     <div className="bg-black text-white min-h-screen relative font-[var(--font-plus-jakarta)]">
       {/* Fluid background only for hero section */}
-      <FluidBackground />
+       <FluidBackground /> 
 
       {/* Content */}
       <div className="relative z-10">
