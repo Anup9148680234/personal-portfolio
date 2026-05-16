@@ -69,14 +69,14 @@ export const projects = [
   },
   {
     id: 7,
-    title: "Antigravity Remake", 
+    title: "Scroll Pixel - Production-ready website templates", 
     description:
-      "A visually stunning remake of the iconic 'Antigravity' music video using React.js, Houdini, and GSAP. The project features a dynamic shader background, smooth animations, and interactive elements to capture the essence of the original video while showcasing modern web technologies.",
+      "A collection of production-ready website templates built with React and Tailwind CSS, designed for easy customization and deployment, featuring responsive layouts, modern design elements, and optimized performance.",
     category: "Frontend",
     type: "Web App",
-    link: "https://github.com/Anup9148680234/antigravity-remake",
-    image: "/mocks/antigravity.gif",
-    skills: ["React.js", "Houdini", "GSAP"],
+    link: "https://github.com/Anup9148680234/ScrollPixel",
+    image: "/mocks/scroll-pixel.gif",
+    skills: ["React.js", "Tailwind CSS", "UI/UX Design"],
 
   }
 ];
